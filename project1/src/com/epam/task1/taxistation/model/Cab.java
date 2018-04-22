@@ -1,8 +1,8 @@
 package com.epam.task1.taxistation.model;
 
 public class Cab implements Comparable<Cab> {
-	
-	//���������� ����� ��� ������� ����
+	//кодировка - пиши лучше на английском
+	//óíèêàëüíûé íîìåð äëÿ êàæäîãî êýáà
 	private static int counter = 0;
 	
 	private int speed;
@@ -28,6 +28,9 @@ public class Cab implements Comparable<Cab> {
 	
 	@Override
 	public int compareTo(Cab o) {
+		//после if else  - не забывай ставить {} - даже если в теле условия будет одна строчка
+		//чтобы не было ошибок в будущем если этот блок изменится 
+		//это касается также циклов - пройдись по проекту и проставь {}
 		if (this.fuelConsumption < o.fuelConsumption)
 			return -1;
 		else if (this.fuelConsumption > o.fuelConsumption)
@@ -38,25 +41,27 @@ public class Cab implements Comparable<Cab> {
 	
 	@Override
 	public String toString() {
-		StringBuilder s = new StringBuilder("����� �" + identifier);
+		//опять кодировка
+		StringBuilder s = new StringBuilder("Òàêñè ¹" + identifier);
 		if (speed>0)
-			s.append(" �� ��������� " + speed); 
+			s.append(" ñî ñêîðîñòüþ " + speed); 
 		else
-			s.append(" � ����������� ���������");
+			s.append(" ñ íåèçâåñòíîé ñêîðîñòüþ");
 		
 		if (fuelConsumption>0)
-			s.append(" � ������������ ������� " + fuelConsumption); 
+			s.append(" è ïîòðåáëåíèåì òîïëèâà " + fuelConsumption); 
 		else
-			s.append(" � ����������� �������� �������,");
+			s.append(" è íåèçâåñòíûì ðàñõîäîì òîïëèâà,");
 		
 		if (price>0)
-			s.append(", ���������� " + price); 
+			s.append(", ñòîèìîñòüþ " + price); 
 		else
-			s.append(", �� �������� ����.");
+			s.append(", ïî íåâåäîìî öåíå.");
 		
 		return s.toString();
 	}
 
+	//get/set - методы следуют в классе обычно после конструкторов
 	public int getSpeed() {
 		return speed;
 	}
