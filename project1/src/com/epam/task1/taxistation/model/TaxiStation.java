@@ -7,11 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//–∫–ª–∞—Å—Å –æ—á–µ–Ω—å –ø–µ—Ä–µ–≥—Ä—É–∂–µ–Ω –±–∏–∑–Ω–µ—Å-–ª–æ–≥–∏–∫–æ–π, —Ö–æ—Ç—è –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –ø–∞–∫–µ—Ç–µ model
+//–Ω—É–∂–Ω–æ —Å–æ–∑–¥–∞—Ç—å –∫–ª–∞—Å—Å - —Ç–∏–ø–∞ TaxiService –≤ –ø–∞–∫–µ—Ç–µ service - –∫—É–¥–∞ –≤—ã–Ω–µ—Å—Ç–∏ –≤—Å–µ –º–µ—Ç–æ–¥—ã –±–∏–∑–Ω–µ—Å—Å-–ª–æ–≥–∏–∫–∏
+//–∞ –∑–¥–µ—Å—å –Ω—É–∂–Ω–æ –æ—Å—Ç–∞–≤–∏—Ç—å —Ç–æ–ª—å–∫–æ –∫–æ–ª–ª–µ–∫—Ü–∏—é cabList, get/set - –º–µ—Ç–æ–¥—ã, –º–æ–∂–Ω–æ —Ç–∞–∫–∂–µ addTaxi() –∏ getSize() 
 public class TaxiStation {
 
 	private List<Cab> cabList = new ArrayList<Cab>();
 	
-	//—„ÂÌÂËÓ‚‡Ú¸ ÒÎÛ˜‡Ì˚È ÒÔËÒÓÍ ËÁ 5-10 ‡‚ÚÓ ÒÓ ÒÎÛ˜‡ÈÌ˚ÏË Ô‡‡ÏÂÚ‡ÏË Ë ‚˚‚ÂÒÚË Ëı Ì‡ ˝Í‡Ì
+	//√ë√£√•√≠√•√∞√®√∞√Æ√¢√†√≤√º √±√´√≥√∑√†√≠√ª√© √±√Ø√®√±√Æ√™ √®√ß 5-10 √†√¢√≤√Æ √±√Æ √±√´√≥√∑√†√©√≠√ª√¨√® √Ø√†√∞√†√¨√•√≤√∞√†√¨√® √® √¢√ª√¢√•√±√≤√® √®√µ √≠√† √Ω√™√∞√†√≠
 	public void generateCabs() {
 		if (!cabList.isEmpty()) cabList.clear();
 		int n = (int) Math.random()*6 + 5;
@@ -24,10 +27,10 @@ public class TaxiStation {
 		showCabs();
 	}
 	
-	//‚˚‚Ó‰ ÒÔËÒÍ‡ Í˝·Ó‚ Ì‡ ˝Í‡Ì
+	//√¢√ª√¢√Æ√§ √±√Ø√®√±√™√† √™√Ω√°√Æ√¢ √≠√† √Ω√™√∞√†√≠
 	public void showCabs() {
 		if (cabList.isEmpty()) {
-			System.out.println("œËÏÂ˜‡ÌËÂ: ¬‡¯ ÒÔËÒÓÍ ‡‚ÚÓ ÔÛÒÚ");
+			System.out.println("√è√∞√®√¨√•√∑√†√≠√®√•: √Ç√†√∏ √±√Ø√®√±√Æ√™ √†√¢√≤√Æ √Ø√≥√±√≤");
 			return;
 		}
 		for (Cab cab: cabList) {
@@ -35,42 +38,48 @@ public class TaxiStation {
 		}
 	}
 	
-	//ÓÚÒÓÚËÓ‚‡Ú¸ Í˝·˚ ÔÓ ‡ÒıÓ‰Û ÚÓÔÎË‚‡
+	//√Æ√≤√±√Æ√∞√≤√®√∞√Æ√¢√†√≤√º √™√Ω√°√ª √Ø√Æ √∞√†√±√µ√Æ√§√≥ √≤√Æ√Ø√´√®√¢√†
 	public void sortCabs(){
 		if (cabList.isEmpty()) {
-			System.out.println("œËÏÂ˜‡ÌËÂ: ¬‡¯ ÒÔËÒÓÍ ‡‚ÚÓ ÔÛÒÚ");
+			System.out.println("√è√∞√®√¨√•√∑√†√≠√®√•: √Ç√†√∏ √±√Ø√®√±√Æ√™ √†√¢√≤√Æ √Ø√≥√±√≤");
 			return;
 		}
 		Collections.sort(cabList);
 		showCabs();
 	}
 	
-	//‚˚‚ÂÒÚË Ì‡ ˝Í‡Ì Ó·˘Û˛ ÒÚÓËÏÓÒÚ¸ Ú‡ÍÒÓÔ‡Í‡
+	//√¢√ª√¢√•√±√≤√® √≠√† √Ω√™√∞√†√≠ √Æ√°√π√≥√æ √±√≤√Æ√®√¨√Æ√±√≤√º √≤√†√™√±√Æ√Ø√†√∞√™√†
 	public int showPrice() {
 		if (cabList.isEmpty()) {
-			System.out.println("œËÏÂ˜‡ÌËÂ: ¬‡¯ ÒÔËÒÓÍ ‡‚ÚÓ ÔÛÒÚ");
+			System.out.println("√è√∞√®√¨√•√∑√†√≠√®√•: √Ç√†√∏ √±√Ø√®√±√Æ√™ √†√¢√≤√Æ √Ø√≥√±√≤");
 		}
 		int sum = 0;
 		for (Cab cab: cabList) {
 			sum += cab.getPrice();
 		}
-		System.out.println("—ÚÓËÏÓÒÚ¸ ‡‚ÚÓÔ‡Í‡: " + sum);
+		System.out.println("√ë√≤√Æ√®√¨√Æ√±√≤√º √†√¢√≤√Æ√Ø√†√∞√™√†: " + sum);
 		return sum;
 	}
 	
-	//ÔÓËÒÍ Í˝·‡ ÔÓ ‰Ë‡Ô‡ÁÓÌÛ, ‚‚Ó‰ËÏÓÏÓÛ Ò ÍÓÌÒÓÎË
+	//√Ø√Æ√®√±√™ √™√Ω√°√† √Ø√Æ √§√®√†√Ø√†√ß√Æ√≠√≥, √¢√¢√Æ√§√®√¨√Æ√¨√Æ√≥ √± √™√Æ√≠√±√Æ√´√®
 	public Cab showCabWithSpeed() {
 		if (cabList.isEmpty()) {
-			System.out.println("œËÏÂ˜‡ÌËÂ: ¬‡¯ ÒÔËÒÓÍ ‡‚ÚÓ ÔÛÒÚ");
+			System.out.println("√è√∞√®√¨√•√∑√†√≠√®√•: √Ç√†√∏ √±√Ø√®√±√Æ√™ √†√¢√≤√Æ √Ø√≥√±√≤");
+			//–ø–ª–æ—Ö–∞—è –ø—Ä–∞–∫—Ç–∏–∫–∞ –≤–æ–∑–≤—Ä–∞—â–∞—Ç—å null –∏–∑ –º–µ—Ç–æ–¥–æ–≤
+			//–ø–æ–¥—É–º–∞–π –∫–∞–∫ –∑–¥–µ—Å—å –ª—É—á—à–µ –±—É–¥–µ—Ç –∏—Å–ø—Ä–∞–≤–∏—Ç—å
 			return null;
 		}
 		String input;
 		int a = -1, b = -1;
-		System.out.println("œÓÊ‡ÎÛÈÒÚ‡, ‚‚Â‰ËÚÂ ‰Ë‡Ô‡ÁÓÌ ËÁ ‰‚Ûı ˜ËÒÂÎ ˜ÂÂÁ ÔÓ·ÂÎ");
+		System.out.println("√è√Æ√¶√†√´√≥√©√±√≤√†, √¢√¢√•√§√®√≤√• √§√®√†√Ø√†√ß√Æ√≠ √®√ß √§√¢√≥√µ √∑√®√±√•√´ √∑√•√∞√•√ß √Ø√∞√Æ√°√•√´");
+		// –≤–º–µ—Å—Ç–æ —ç—Ç–∏—Ö –≤—Å–µ—Ö —Ä–∏–¥–µ—Ä–æ–≤ –ª—É—á—à–µ –∏—Å–ø–æ–ª—å–∑–æ–≤–∞—Ç—å –∫–ª–∞—Å—Å Scanner(System.in)
+		//–∞ –ø–æ—Ç–æ–º –ø—Ä–æ—Å—Ç–æ scanner.next()
+		//—Ä–∏–¥–µ—Ä—ã –ª—É—á—à–µ –∏—Å–ø–æ–ª—å–∑–æ–≤–∞—Ç—å –ø—Ä–∏ —Ä–∞–±–æ—Ç–µ —Å —Ñ–∞–π–ª–∞–º–∏
 		InputStreamReader iS = new InputStreamReader(System.in);
 		BufferedReader bR = new BufferedReader(iS);
 		try {
 			input = bR.readLine();
+			//–∑—Ä—è —É—Å–ª–æ–∂–Ω–∏–ª –ª–æ–≥–∏–∫—É –ª—É—á—à–µ 2 —Ä–∞–∑–∞ –∑–∞–ø—Ä–æ—Å–∏ –≤–≤–æ–¥
 			a = Integer.parseInt(input.split(" ")[0]);
 			b = Integer.parseInt(input.split(" ")[1]);
 			if (a>b) {
@@ -80,18 +89,18 @@ public class TaxiStation {
 			}
 			for (Cab cab: cabList) {
 				if (cab.getSpeed()>=a && cab.getSpeed()<=b) {
-					System.out.println("»ÒÍÓÏ˚È ‚‡ÏË ‡‚ÚÓÏÓ·ËÎ¸ " + cab);
+					System.out.println("√à√±√™√Æ√¨√ª√© √¢√†√¨√® √†√¢√≤√Æ√¨√Æ√°√®√´√º " + cab);
 					return cab;
 				}
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("¬˚ ÌÂ ‚‚ÂÎË ‰‚‡ ˜ËÒÎ‡");
+			System.out.println("√Ç√ª √≠√• √¢√¢√•√´√® √§√¢√† √∑√®√±√´√†");
 		} catch (NumberFormatException e) {
-			System.out.println("¬˚ ÌÂ ‚‚ÂÎË ‰‚‡ ˜ËÒÎ‡");
+			System.out.println("√Ç√ª √≠√• √¢√¢√•√´√® √§√¢√† √∑√®√±√´√†");
 		} catch (IOException e) {
-			System.out.println("Œ¯Ë·Í‡ ‚‚Ó‰‡ ‰‡ÌÌ˚ı");
+			System.out.println("√é√∏√®√°√™√† √¢√¢√Æ√§√† √§√†√≠√≠√ª√µ");
 		}
-		System.out.println("¿‚ÚÓ Ò Ú‡ÍÏËÏ Ô‡‡ÏÂÚ‡ÏË ÌÂ ÒÛ˘ÂÒÚ‚ÛÂÚ ‚ Ú‡ÍÒÓÔ‡ÍÂ");
+		System.out.println("√Ä√¢√≤√Æ √± √≤√†√™√¨√®√¨ √Ø√†√∞√†√¨√•√≤√∞√†√¨√® √≠√• √±√≥√π√•√±√≤√¢√≥√•√≤ √¢ √≤√†√™√±√Æ√Ø√†√∞√™√•");
 		return null;	
 	}
 	
